@@ -1,0 +1,51 @@
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{microtype}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtext}
+\usepackage{physics}
+\usepackage{newfloat}
+\usepackage{caption}
+\usepackage{indentfirst}
+\usepackage{titlesec,titletoc}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{mdframed}
+\usepackage[inline]{enumitem}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{longtable}
+
+\newcommand{\onlyinsubfile}[1]{#1}
+\newcommand{\notinsubfile}[1]{}
+\newcommand{\makedocroot}[0]{
+    \renewcommand{\onlyinsubfile}[1]{}
+    \renewcommand{\notinsubfile}[1]{##1}
+}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.PNG}
+\graphicspath{{./img/}{\docroot/img/}}
+\captionsetup[figure]{justification=centering}
+\renewcommand{\thesubfigure}{\asbuk{subfigure}}
+\DeclareCaptionLabelSeparator{dotseparator}{. }
+\captionsetup{labelsep=dotseparator}
+
+\usepackage[%
+    style=gost-numeric,
+    citestyle=gost-numeric,
+    isbn=true,
+    url=true,
+    defernumbers=true,
+    %sorting=nyt, % sort by name, year, title
+    sorting=none, % order of appearance
+    bibencoding=utf8,
+    backend=biber,
+    language=auto, % get main language from babel
+    autolang=other, % get item language from bib entry
+]{biblatex}
+
+\defbibheading{lessonbib}{\subsection{Список литературы к занятию}}

@@ -12,4 +12,8 @@
 *.toc
 *.nav
 *.snm
+*.bcf
+*.fdb_latexmk
+*.fls
+*.run.xml
 .vscode

@@ -1,0 +1,33 @@
+\documentclass[12pt,a4paper,final]{article}
+
+\input{packages}
+
+\geometry{left=3cm,right=2cm,top=2cm,bottom=2cm}
+
+\titlelabel{\thetitle. }
+\patchcmd{\appendices}{\quad}{. }{}{}
+
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\bibliography{bibliography}
+
+\begin{document}
+
+    \input{title}
+    \tableofcontents
+
+    \newpage
+
+    \input{contents}
+
+    \clearpage
+
+    \nocite{*}\printbibliography[heading=bibintoc, keyword={main}]
+
+\end{document}
